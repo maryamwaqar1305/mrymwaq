@@ -57,19 +57,25 @@
 }
 
 .ab-facts {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(4rem, 8vw, 8rem);
+
+  width: 100%;
   padding: clamp(2rem, 5vw, 3rem) 0;
+
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   margin-bottom: clamp(4rem, 10vw, 8rem);
 }
 
 .ab-fact {
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  align-items: center;
+  text-align: center;
 }
 
 .ab-fact__label {
@@ -229,24 +235,30 @@
 
 @media (max-width: 820px) {
   .ab-facts {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem 1rem;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 2rem;
   }
+
   .ab-section,
   .ab-section--wide {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
   .ab-section__head {
     position: static;
   }
+
   .ab-job {
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }
+
   .ab-skills {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .ab-cta__arrow {
     display: none;
   }

@@ -341,9 +341,9 @@ export const about = {
       ],
     },
   ],
-  facts: [
-    { label: "Based in", value: "Remote" },
-    { label: "Focus", value: "Product & Frontend" },
-    { label: "Tools", value: "Figma, React, GSAP" },
-  ],
+facts: [
+  { label: "Based in", value: "Remote" },
+  { label: "Focus", value: "Frontend Development" },
+  { label: "Tools", value: "React, Node.js, GitHub" },
+],
 };
