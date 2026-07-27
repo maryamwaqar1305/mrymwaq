@@ -18,9 +18,9 @@ export const profile = {
 };
  
 export const nav = [
-  { label: "Work", href: "/#work" },
+  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
  
 export const projects = [
