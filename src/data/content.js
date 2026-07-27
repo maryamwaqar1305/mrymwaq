@@ -342,8 +342,8 @@ export const about = {
     },
   ],
 facts: [
-  { label: "Based in", value: "Remote" },
-  { label: "Focus", value: "Frontend Development" },
+  { label: "Based in", value: "Remote, Delhi" },
+  { label: "Focus", value: "Fullstack Development" },
   { label: "Tools", value: "React, Node.js, GitHub" },
 ],
 };
