@@ -343,7 +343,6 @@ export const about = {
   ],
   facts: [
     { label: "Based in", value: "Remote" },
-    { label: "Experience", value: "4 years" },
     { label: "Focus", value: "Product & Frontend" },
     { label: "Tools", value: "Figma, React, GSAP" },
   ],
