@@ -5,7 +5,7 @@ import projLumiere from "../assets/projects/lumie.png";
 
 
 export const profile = {
-  name: "Maryam Waqar",
+  name: "Me",
   firstName: "Maryam",
   role: "Fullstack Developer & Designer",
   heroSub:
