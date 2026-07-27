@@ -1,0 +1,120 @@
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 9vw, 7rem);
+  margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.pcard {
+  display: flex;
+  flex-direction: column;
+}
+
+.pcard__frame {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  width: 100%;
+}
+
+.pcard__image {
+  aspect-ratio: 16 / 10;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.8s var(--ease);
+}
+
+.pcard__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pcard__frame:hover .pcard__image {
+  transform: scale(1.02);
+}
+
+.pcard__mark {
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 12vw, 9rem);
+  color: rgba(17, 17, 17, 0.14);
+  letter-spacing: -0.04em;
+}
+
+.pcard__frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s var(--ease);
+  pointer-events: none;
+}
+.pcard__frame:hover::after {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* Meta — smaller, minimal, title & desc similar size */
+.pcard__meta {
+  margin-top: clamp(0.9rem, 1.8vw, 1.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-width: 46ch;
+}
+
+.pcard__title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.pcard__desc {
+  color: var(--text-2);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.pcard__tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.pcard__tags span {
+  font-size: 0.72rem;
+  color: var(--text-2);
+  background: var(--surface);
+  padding: 0.25rem 0.7rem;
+  border-radius: 4px;
+}
+
+/* Desktop: alternate image sides, text sits under its own image (aligned to it) */
+@media (min-width: 900px) {
+  .pcard--left {
+    align-items: flex-start;
+  }
+  .pcard--right {
+    align-items: flex-end;
+  }
+  .pcard__frame {
+    width: 70%;          /* a bit bigger */
+  }
+  /* meta matches the image width and stays left-aligned within it */
+  .pcard__meta {
+    width: 70%;
+    max-width: 70%;
+    text-align: left;
+  }
+}
+
+/* Mobile: full-width single column, as before */
+@media (max-width: 900px) {
+  .pcard__frame { width: 100%; }
+  .pcard--left, .pcard--right { align-items: stretch; }
+}

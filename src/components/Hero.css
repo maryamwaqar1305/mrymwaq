@@ -1,0 +1,156 @@
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 72px;
+  gap: clamp(1.75rem, 4vw, 3rem);
+}
+
+.hero__hint {
+  position: absolute;
+  top: clamp(5rem, 12vw, 8rem);
+  left: 50%;
+  margin-left: clamp(140px, 15vw, 230px);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-2);
+}
+
+.hero__hint em {
+  font-family: "Caveat", cursive;
+  font-style: normal;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+}
+
+/*
+ * Stage aspect = COLS : ROWS (5:7). Tiles each show their slice of the photo.
+ * Kept small and centered.
+ */
+.hero__stage {
+  position: relative;
+  width: clamp(180px, 17vw, 240px);
+  aspect-ratio: 5 / 7;
+}
+
+/* Grid of photo-slice tiles. Hairline gaps so the revealed image looks seamless. */
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  gap: 0;
+  background: transparent;
+}
+
+.hero__grid .tile {
+  position: relative;
+  background-repeat: no-repeat;
+  filter: grayscale(1) contrast(1.03);
+}
+
+/* Cover: a white layer over the slice so the tile reads as empty background.
+   A faint inner outline gives the subtle grid line seen at rest; it fades on reveal. */
+.hero__grid .tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.05);
+  opacity: 1;
+  transform: scale(1);
+  transform-origin: center;
+  transition: opacity 2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Revealed: white cover fades + scales away, showing the photo slice cleanly. */
+.hero__grid .tile.is-revealed::after {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.hero__text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.hero__title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 0.95;
+}
+
+.hero__sub {
+  color: var(--text-2);
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  max-width: 32ch;
+  line-height: 1.5;
+}
+
+.hero__foot {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.hero__line {
+  height: 1px;
+  width: 64px;
+  background: var(--border-strong);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--text);
+  transform: translateX(-100%);
+  animation: scrollLine 2.4s var(--ease) infinite;
+}
+
+@keyframes scrollLine {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+@media (max-width: 640px) {
+  .hero__hint { position: static; margin-bottom: -0.5rem; }
+  .hero__stage { width: min(52vw, 220px); }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.7rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 100px;
+  transition: transform 0.3s var(--ease), background 0.3s var(--ease),
+    color 0.3s var(--ease), border-color 0.3s var(--ease), gap 0.3s var(--ease);
+}
+
+.btn--solid { background: var(--accent); color: var(--bg); }
+.btn--solid:hover { transform: translateY(-2px); background: #2a2a2a; gap: 0.75rem; }
+.btn--ghost { border: 1px solid var(--border-strong); color: var(--text); }
+.btn--ghost:hover { transform: translateY(-2px); border-color: var(--text); }

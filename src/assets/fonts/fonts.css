@@ -1,0 +1,44 @@
+/*
+ * PP Editorial New — Pangram Pangram (free for personal use).
+ * Download the font files and place them in this folder (src/assets/fonts/):
+ *   PPEditorialNew-Ultralight.woff2
+ *   PPEditorialNew-Regular.woff2
+ *   PPEditorialNew-Italic.woff2
+ *   PPEditorialNew-Ultrabold.woff2
+ * (woff2 preferred; .otf also works — just change the url + format below.)
+ *
+ * Get them from: https://pangrampangram.com/products/editorial-new
+ * or https://befonts.com/editorial-new-font-family.html
+ *
+ * Until the files are present the site falls back to Fraunces (a close match),
+ * so everything still looks right out of the box.
+ */
+
+@font-face {
+  font-family: "PP Editorial New";
+  src: url("./PPEditorialNew-Ultralight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Editorial New";
+  src: url("./PPEditorialNew-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Editorial New";
+  src: url("./PPEditorialNew-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Editorial New";
+  src: url("./PPEditorialNew-Ultrabold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

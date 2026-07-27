@@ -1,0 +1,56 @@
+.contact__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact__email {
+  font-size: clamp(2rem, 6.5vw, 4.75rem);
+  line-height: 1.05;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.contact__email::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease);
+}
+
+.contact__email:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.contact__note {
+  color: var(--text-2);
+  max-width: 42ch;
+  margin-top: 2rem;
+  line-height: 1.7;
+}
+
+.contact__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.contact__ext {
+  position: relative;
+  font-size: 0.9rem;
+  color: var(--text-2);
+  transition: color 0.3s var(--ease);
+}
+
+.contact__ext:hover {
+  color: var(--text);
+}

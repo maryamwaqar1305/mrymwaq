@@ -1,0 +1,30 @@
+.trail-layer {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.trail-img {
+  position: absolute;
+  width: 155px;
+  height: 195px;
+  object-fit: cover;
+  border-radius: 2px;
+  transform: translate(-50%, -50%) scale(0.7) rotate(var(--rot, 0deg));
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.trail-img.is-in {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(var(--rot, 0deg));
+}
+
+.trail-img.is-out {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85) rotate(var(--rot, 0deg));
+}
