@@ -326,7 +326,7 @@ export function getProject(slug) {
 // Long-form "About" content for the /about page (blog style)
 export const about = {
   intro:
-    "Great digital experiences are rarely accidental. They're shaped through countless small decisions—typography, spacing, motion, accessibility, and performance. That's the part I enjoy most. As a full-stack developer and designer, I love crafting products where every detail has a purpose, creating interfaces that feel calm, intuitive, and built to last.",
+    "Hi, I'm Maryam. I enjoy designing and building digital experiences that feel simple, thoughtful, and easy to use. I love the process of turning an idea into something real, from the first sketch to the final line of code. If you move your cursor around this page, you'll find a few moments from my life following along. They're little pieces of who I am outside of work, because I believe the best products are built by real people with stories beyond the screen.",
   sections: [
     {
       heading: "A little about me",
