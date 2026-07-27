@@ -326,7 +326,7 @@ export function getProject(slug) {
 // Long-form "About" content for the /about page (blog style)
 export const about = {
   intro:
-    "I design products that feel obvious in hindsight. The kind where nobody notices the interface because it simply got out of the way. That restraint is the hardest thing to get right, and it's the thing I care about most.",
+    "Great digital experiences are rarely accidental. They're shaped through countless small decisions—typography, spacing, motion, accessibility, and performance. That's the part I enjoy most. As a full-stack developer and designer, I love crafting products where every detail has a purpose, creating interfaces that feel calm, intuitive, and built to last.",
   sections: [
     {
       heading: "A little about me",
