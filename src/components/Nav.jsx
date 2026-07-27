@@ -22,7 +22,7 @@ export default function Nav() {
     <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
       <div className="container nav__inner">
         <Link to="/" className="nav__logo" onClick={() => setOpen(false)}>
-          {profile.name}
+          {profile.navname}
         </Link>
 
         <nav className="nav__links" aria-label="Primary">
