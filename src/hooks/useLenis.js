@@ -12,6 +12,9 @@ export default function useLenis() {
       smoothWheel: true,
     });
 
+    // Expose globally so Nav / Home can scroll to sections through Lenis.
+    window.__lenis = lenis;
+
     let rafId;
     function raf(time) {
       lenis.raf(time);
@@ -19,28 +22,39 @@ export default function useLenis() {
     }
     rafId = requestAnimationFrame(raf);
 
-    // Intercept only pure in-page hash links on the current (home) path.
-    const onClick = (e) => {
-      const a = e.target.closest('a[href^="/#"], a[href^="#"]');
-      if (!a) return;
-      const href = a.getAttribute("href");
-      const hash = href.includes("#") ? "#" + href.split("#")[1] : "";
-      if (!hash || hash.length < 2) return;
-      // Only smooth-scroll if we're already on the home page and target exists
-      if (window.location.pathname === "/") {
-        const el = document.querySelector(hash);
-        if (el) {
-          e.preventDefault();
-          lenis.scrollTo(el, { duration: 1.2 });
-        }
-      }
-    };
-    document.addEventListener("click", onClick);
-
     return () => {
       cancelAnimationFrame(rafId);
-      document.removeEventListener("click", onClick);
+      window.__lenis = null;
       lenis.destroy();
     };
   }, []);
+}
+
+// Scroll to a section id using Lenis if available, else native fallback.
+// Retries until the element exists, and re-scrolls a few times so late-loading
+// content (images changing page height) doesn't leave us at the wrong spot.
+export function scrollToSection(id) {
+  let tries = 0;
+  const doScroll = () => {
+    const el = document.getElementById(id);
+    if (!el) return false;
+    if (window.__lenis) {
+      window.__lenis.scrollTo(el, { duration: 1.0, offset: -10 });
+    } else {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+    return true;
+  };
+
+  const tick = () => {
+    if (doScroll()) {
+      // re-issue the scroll a couple times as layout settles
+      setTimeout(doScroll, 400);
+      setTimeout(doScroll, 900);
+    } else if (tries < 40) {
+      tries++;
+      setTimeout(tick, 100);
+    }
+  };
+  tick();
 }
