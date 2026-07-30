@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__brand">
-          <span className="footer__name">{profile.name}</span>
+          <span className="footer__name">{profile.navname}</span>
           <p className="footer__thanks">Thanks for scrolling all the way down.</p>
         </div>
         <div className="footer__meta">
