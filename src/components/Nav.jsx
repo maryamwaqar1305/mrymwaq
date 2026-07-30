@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { nav, profile } from "../data/content";
-import { scrollToSection } from "../hooks/useLenis";
 import "./Nav.css";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -21,26 +18,6 @@ export default function Nav() {
     document.documentElement.style.overflow = open ? "hidden" : "";
   }, [open]);
 
-  // Smoothly scroll to a section by id (retries until the element exists).
-  const scrollToId = (id) => scrollToSection(id);
-
-  // Handle a nav link click. Hash links (/#work, /#contact) scroll to a section;
-  // plain routes (/about) navigate normally.
-  const handleClick = (e, href) => {
-    setOpen(false);
-    if (href.startsWith("/#")) {
-      e.preventDefault();
-      const id = href.slice(2); // "work" / "contact"
-      if (location.pathname === "/") {
-        scrollToId(id);
-      } else {
-        // navigate home, then scroll once it renders (retry handles timing)
-        navigate("/");
-        setTimeout(() => scrollToId(id), 150);
-      }
-    }
-  };
-
   return (
     <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
       <div className="container nav__inner">
@@ -49,27 +26,16 @@ export default function Nav() {
         </Link>
 
         <nav className="nav__links" aria-label="Primary">
-          {nav.map((item) =>
-            item.href.startsWith("/#") ? (
-              <a
-                key={item.href}
-                href={item.href}
-                className="nav__link"
-                onClick={(e) => handleClick(e, item.href)}
-              >
-                {item.label}
-              </a>
-            ) : (
-              <Link
-                key={item.href}
-                to={item.href}
-                className="nav__link"
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
-            )
-          )}
+          {nav.map((item) => (
+            <Link
+              key={item.href}
+              to={item.href}
+              className="nav__link"
+              onClick={() => setOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
           <a
             href={profile.resume}
             target="_blank"
@@ -94,31 +60,18 @@ export default function Nav() {
 
       <div className={`nav__drawer ${open ? "is-open" : ""}`}>
         <nav aria-label="Mobile">
-          {nav.map((item, i) =>
-            item.href.startsWith("/#") ? (
-              <a
-                key={item.href}
-                href={item.href}
-                className="nav__drawer-link"
-                style={{ transitionDelay: `${open ? 0.08 + i * 0.05 : 0}s` }}
-                onClick={(e) => handleClick(e, item.href)}
-              >
-                <span className="nav__drawer-index">0{i + 1}</span>
-                {item.label}
-              </a>
-            ) : (
-              <Link
-                key={item.href}
-                to={item.href}
-                className="nav__drawer-link"
-                style={{ transitionDelay: `${open ? 0.08 + i * 0.05 : 0}s` }}
-                onClick={() => setOpen(false)}
-              >
-                <span className="nav__drawer-index">0{i + 1}</span>
-                {item.label}
-              </Link>
-            )
-          )}
+          {nav.map((item, i) => (
+            <Link
+              key={item.href}
+              to={item.href}
+              className="nav__drawer-link"
+              style={{ transitionDelay: `${open ? 0.08 + i * 0.05 : 0}s` }}
+              onClick={() => setOpen(false)}
+            >
+              <span className="nav__drawer-index">0{i + 1}</span>
+              {item.label}
+            </Link>
+          ))}
           <a
             href={profile.resume}
             target="_blank"

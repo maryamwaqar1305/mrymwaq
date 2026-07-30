@@ -21,6 +21,9 @@ export default function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home ready={ready} />} />
+        <Route path="/work" element={<Home ready={ready} />} />
+        <Route path="/contact" element={<Home ready={ready} />} />
+        <Route path="/designs" element={<Home ready={ready} />} />
         <Route path="/work/:slug" element={<CaseStudy />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/gallery" element={<GalleryPage />} />

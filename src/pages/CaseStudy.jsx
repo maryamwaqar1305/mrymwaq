@@ -33,7 +33,7 @@ export default function CaseStudy() {
       {/* Header */}
       <header className="cs-hero">
         <div className="container">
-          <button className="cs-back" onClick={() => navigate("/#work")} data-cursor="Back">
+          <button className="cs-back" onClick={() => navigate("/work")} data-cursor="Back">
             <svg viewBox="0 0 24 24" width="15" height="15" fill="none" aria-hidden="true">
               <path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.6"
                 strokeLinecap="round" strokeLinejoin="round" />

@@ -100,7 +100,7 @@ export default function AboutPage() {
         </section>
       </div>
 
-      <Link to="/#contact" className="ab-cta" data-cursor="Say hi">
+      <Link to="/contact" className="ab-cta" data-cursor="Say hi">
         <div className="container ab-cta__inner">
           <span className="eyebrow">Let&apos;s talk</span>
           <span className="ab-cta__title display">Work with me</span>
