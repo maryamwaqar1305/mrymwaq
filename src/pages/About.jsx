@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { about, profile, experience, skills } from "../data/content";
 import useReveal from "../hooks/useReveal";
@@ -10,10 +10,6 @@ export default function AboutPage() {
   const navigate = useNavigate();
   const heroRef = useRef(null);
   useReveal();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <article className="ab">

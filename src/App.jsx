@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import useLenis from "./hooks/useLenis";
 import Loader from "./components/Loader";
 import Cursor from "./components/Cursor";
+import ScrollToTop from "./components/ScrollToTop";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -16,6 +17,7 @@ export default function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Loader onDone={() => setReady(true)} />
       <Cursor />
       <Nav />

@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import useReveal from "../hooks/useReveal";
+<<<<<<< HEAD
 import { scrollToSection } from "../hooks/useLenis";
+=======
+import { scrollToHash, scrollToTopNow } from "../lib/lenis";
+>>>>>>> 6b51494 (fix: reset Lenis scroll on route change so About CTA lands correctly)
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Gallery from "../components/Gallery";
@@ -13,6 +17,7 @@ export default function Home() {
   useReveal();
 
   useEffect(() => {
+<<<<<<< HEAD
     // Map clean paths to section ids. "/" (or unknown) scrolls to top.
     const path = location.pathname;
     const map = { "/work": "work", "/contact": "contact", "/designs": "designs" };
@@ -32,6 +37,17 @@ export default function Home() {
       }, 100);
     }
   }, [location]);
+=======
+    if (!location.hash) return;
+
+    // Arriving from another route: park at the top, land on the target,
+    // then re-correct once images / reveal animations have settled the layout.
+    scrollToTopNow();
+    const land = () => scrollToHash(location.hash, { immediate: true, force: true });
+    const timers = [80, 350, 800, 1400].map((d) => setTimeout(land, d));
+    return () => timers.forEach(clearTimeout);
+  }, [location.key, location.hash]);
+>>>>>>> 6b51494 (fix: reset Lenis scroll on route change so About CTA lands correctly)
 
   return (
     <main>
