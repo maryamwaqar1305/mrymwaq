@@ -4,11 +4,17 @@
   align-items: flex-start;
 }
 
+/* Inline-block so the hover underline tracks the text, not the full row width. */
 .contact__email {
-  font-size: clamp(2rem, 6.5vw, 4.75rem);
+  display: inline-block;
+  max-width: 100%;
+  font-size: clamp(1.5rem, 6.5vw, 4.75rem);
   line-height: 1.05;
   position: relative;
   padding-bottom: 6px;
+  /* An email address has no spaces, so it must be allowed to break on phones. */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .contact__email::after {
@@ -53,4 +59,21 @@
 
 .contact__ext:hover {
   color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .contact__email {
+    /* Tighter floor: 24px still wraps cleanly at 360px wide. */
+    font-size: clamp(1.35rem, 7.5vw, 2rem);
+    line-height: 1.15;
+  }
+
+  .contact__note {
+    margin-top: 1.5rem;
+  }
+
+  .contact__links {
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
 }
