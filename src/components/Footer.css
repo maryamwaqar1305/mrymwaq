@@ -5,44 +5,15 @@
 
 .footer__inner {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.footer__name {
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
-  letter-spacing: -0.02em;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
 }
 
 .footer__thanks {
   color: var(--text-2);
   font-size: 0.8rem;
-  margin-top: 0.35rem;
-}
-
-.footer__meta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.75rem;
-}
-
-.footer__social {
-  display: flex;
-  gap: 1.25rem;
-  font-size: 0.82rem;
-}
-
-.footer__social a {
-  color: var(--text-2);
-  transition: color 0.3s var(--ease);
-}
-
-.footer__social a:hover {
-  color: var(--text);
 }
 
 .footer__year {
@@ -51,8 +22,9 @@
   font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 560px) {
-  .footer__meta {
-    align-items: flex-start;
-  }
+.footer__name {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }

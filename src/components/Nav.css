@@ -176,3 +176,13 @@
     display: flex;
   }
 }
+/* Fallback lock for when Lenis is off (reduced-motion users). */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Drawer sits above the page but below nothing else; it is a sibling of
+   <header>, so inset:0 correctly resolves against the viewport. */
+.nav__drawer {
+  overflow-y: auto;
+}
