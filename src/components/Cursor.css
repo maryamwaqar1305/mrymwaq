@@ -1,79 +1,78 @@
-.contact__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+/* Custom cursor.
+   Cursor.jsx drives position by writing `transform: translate3d(x, y, 0)` on
+   these two elements, so nothing here may use the `transform` property — the
+   JS would overwrite it. Centering is done with negative margins on the cube
+   (Cursor.jsx also sets margins inline for pixel mode) and with the
+   independent `translate` / `scale` properties on the label, which compose
+   with the JS transform instead of clobbering it. */
 
-/* Inline-block so the hover underline tracks the text, not the full row width. */
-.contact__email {
-  display: inline-block;
-  max-width: 100%;
-  font-size: clamp(1.5rem, 6.5vw, 4.75rem);
-  line-height: 1.05;
-  position: relative;
-  padding-bottom: 6px;
-  /* An email address has no spaces, so it must be allowed to break on phones. */
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-.contact__email::after {
-  content: "";
-  position: absolute;
+.cur {
+  position: fixed;
+  top: 0;
   left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  margin-left: -5px;
   background: var(--text);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.5s var(--ease);
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  transition: width 0.32s var(--ease), height 0.32s var(--ease),
+    margin 0.32s var(--ease), opacity 0.22s var(--ease),
+    background 0.32s var(--ease);
 }
 
-.contact__email:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+/* default — the small black cube. Base rule already covers it. */
+.cur--default {
+  opacity: 1;
 }
 
-.contact__note {
-  color: var(--text-2);
-  max-width: 42ch;
-  margin-top: 2rem;
-  line-height: 1.7;
+/* label — the cube steps aside so the pill carries the text. */
+.cur--label {
+  opacity: 0;
 }
 
-.contact__links {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-top: 2.5rem;
-  flex-wrap: wrap;
+/* pixel — width/height/margins are set inline by Cursor.jsx to one hero tile,
+   so the cursor reads as a single pixel in the grid. */
+.cur--pixel {
+  opacity: 1;
+  background: var(--text);
 }
 
-.contact__ext {
-  position: relative;
-  font-size: 0.9rem;
-  color: var(--text-2);
-  transition: color 0.3s var(--ease);
+.cur-label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  translate: -50% -50%;
+  scale: 0.82;
+  padding: 0.4rem 0.9rem 0.45rem;
+  background: var(--text);
+  color: var(--bg);
+  /* Matches the headline spec: Instrument Serif only ships 400, and the
+     display type uses negative tracking — so no uppercase, no wide tracking. */
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100000;
+  will-change: transform, opacity;
+  transition: opacity 0.26s var(--ease), scale 0.34s var(--ease);
 }
 
-.contact__ext:hover {
-  color: var(--text);
+.cur-label.is-on {
+  opacity: 1;
+  scale: 1;
 }
 
-@media (max-width: 640px) {
-  .contact__email {
-    /* Tighter floor: 24px still wraps cleanly at 360px wide. */
-    font-size: clamp(1.35rem, 7.5vw, 2rem);
-    line-height: 1.15;
-  }
-
-  .contact__note {
-    margin-top: 1.5rem;
-  }
-
-  .contact__links {
-    gap: 1.25rem;
-    margin-top: 2rem;
+@media (prefers-reduced-motion: reduce) {
+  .cur,
+  .cur-label {
+    transition: none;
   }
 }
