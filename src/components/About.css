@@ -113,8 +113,8 @@
 }
 
 .ab-section__body p {
-  font-size: 1.15rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--text-2);
 }
 
@@ -156,6 +156,34 @@
   font-size: 0.9rem;
   color: var(--text-2);
   margin-top: 0.15rem;
+}
+
+.ab-job__list {
+  margin-top: 0.85rem;
+  padding-left: 1.1rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 60ch;
+}
+
+.ab-job__list li {
+  position: relative;
+  color: var(--text-2);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.ab-job__list li::before {
+  content: "";
+  position: absolute;
+  left: -1.1rem;
+  top: 0.6em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-3);
 }
 
 .ab-job__desc {
@@ -234,10 +262,13 @@
 }
 
 @media (max-width: 820px) {
-  .ab-facts {
-    grid-template-columns: 1fr;
-    justify-content: center;
-    gap: 2rem;
+  /* .ab-facts is display:flex, so the old grid-template-columns did nothing
+     here and the facts overflowed the viewport. Make it a real grid again. */
+  .ab-body .ab-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(1.5rem, 5vw, 2.25rem);
+    justify-items: center;
   }
 
   .ab-section,
@@ -248,6 +279,7 @@
 
   .ab-section__head {
     position: static;
+    font-size: 1.4rem;
   }
 
   .ab-job {
@@ -277,4 +309,33 @@
 .ab-body > .ab-section:first-of-type {
   border-top: none;
   padding-top: 0;
+}
+
+/* --- Mobile-only circular profile photo (sits beside the page title) --- */
+/* Desktop: plain block, so the title renders exactly as it did before. */
+.ab-titlerow {
+  display: block;
+}
+
+.ab-pfp {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .ab-titlerow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  .ab-pfp {
+    display: block;
+    flex: 0 0 auto;
+    width: clamp(56px, 17vw, 76px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border);
+  }
 }

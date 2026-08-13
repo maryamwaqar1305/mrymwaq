@@ -4,6 +4,7 @@ import { about, profile, experience, skills } from "../data/content";
 import useReveal from "../hooks/useReveal";
 import ImageTrail from "../components/ImageTrail";
 import SpotifyCard from "../components/SpotifyCard";
+import pfp from "../assets/pfp1.png";
 import "./About.css";
 
 export default function AboutPage() {
@@ -24,7 +25,13 @@ export default function AboutPage() {
         </button>
 
         <span className="eyebrow ab-eyebrow">About</span>
-        <h1 className="ab-title display">{profile.name}</h1>
+
+        {/* Circle photo shows on mobile only. The ImageTrail above needs a
+            hover cursor, so phones get no imagery otherwise. */}
+        <div className="ab-titlerow">
+          <h1 className="ab-title display">{profile.name}</h1>
+          <img className="ab-pfp" src={pfp} alt={profile.name} loading="lazy" />
+        </div>
         <p className="ab-intro">{about.intro}</p>
 
         <div className="ab-spotify">

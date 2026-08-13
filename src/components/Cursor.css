@@ -1,51 +1,79 @@
-.cur,
-.cur-label {
-  position: fixed;
-  top: 0;
+.contact__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Inline-block so the hover underline tracks the text, not the full row width. */
+.contact__email {
+  display: inline-block;
+  max-width: 100%;
+  font-size: clamp(1.5rem, 6.5vw, 4.75rem);
+  line-height: 1.05;
+  position: relative;
+  padding-bottom: 6px;
+  /* An email address has no spaces, so it must be allowed to break on phones. */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.contact__email::after {
+  content: "";
+  position: absolute;
   left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  will-change: transform;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease);
 }
 
-/* Default: small black square, always. */
-.cur {
-  width: 10px;
-  height: 10px;
-  margin: -5px 0 0 -5px;
-  border-radius: 0;
-  background: #111;
-  transition: opacity 0.2s var(--ease), background 0.2s var(--ease);
+.contact__email:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
-/* Over hero grid: sized to one image pixel (set inline), light square. */
-.cur--pixel {
-  background: rgba(200, 200, 200, 0.35);
-  transition: opacity 0.2s var(--ease), background 0.2s var(--ease);
+.contact__note {
+  color: var(--text-2);
+  max-width: 42ch;
+  margin-top: 2rem;
+  line-height: 1.7;
 }
 
-/* Over labelled elements: hide the square, show the pill. */
-.cur--label {
-  opacity: 0;
+.contact__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
 }
 
-.cur-label {
-  padding: 0.5rem 0.9rem;
-  background: var(--accent);
-  color: var(--bg);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  border-radius: 100px;
-  white-space: nowrap;
-  transform-origin: left top;
-  margin: 16px 0 0 16px;
-  opacity: 0;
-  scale: 0.8;
-  transition: opacity 0.25s var(--ease), scale 0.25s var(--ease);
+.contact__ext {
+  position: relative;
+  font-size: 0.9rem;
+  color: var(--text-2);
+  transition: color 0.3s var(--ease);
 }
 
-.cur-label.is-on {
-  opacity: 1;
-  scale: 1;
+.contact__ext:hover {
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .contact__email {
+    /* Tighter floor: 24px still wraps cleanly at 360px wide. */
+    font-size: clamp(1.35rem, 7.5vw, 2rem);
+    line-height: 1.15;
+  }
+
+  .contact__note {
+    margin-top: 1.5rem;
+  }
+
+  .contact__links {
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
 }
