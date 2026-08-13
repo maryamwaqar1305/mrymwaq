@@ -9,25 +9,9 @@ export default function Cursor() {
   const [text, setText] = useState("");
   const [pixel, setPixel] = useState({ w: 0, h: 0 });
 
-  // Re-check on change, so toggling DevTools device mode doesn't leave the page
-  // with `cursor: none` applied and no dot tracking the pointer.
-  const [fine, setFine] = useState(
-    () => window.matchMedia("(hover: hover) and (pointer: fine)").matches
-  );
-
   useEffect(() => {
-    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
-    const onChange = (e) => setFine(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
-
-  useEffect(() => {
-    if (!fine) {
-      setEnabled(false);
-      document.body.classList.remove("custom-cursor");
-      return;
-    }
+    const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (!fine) return;
     setEnabled(true);
     document.body.classList.add("custom-cursor");
 
@@ -81,7 +65,7 @@ export default function Cursor() {
       removeEventListener("mouseover", over);
       document.body.classList.remove("custom-cursor");
     };
-  }, [fine]);
+  }, []);
 
   if (!enabled) return null;
 
