@@ -8,13 +8,14 @@
   grid-template-columns: 180px 1fr;
   gap: clamp(1rem, 4vw, 3rem);
   padding: 2.25rem 0;
-  border-top: 1px solid var(--border);
   position: relative;
 }
 
-.tl-item:last-child {
-  border-bottom: 1px solid var(--border);
+.tl-item:not(:first-child) {
+  border-top: 1px solid var(--border);
 }
+
+
 
 .tl-marker {
   position: absolute;

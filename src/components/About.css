@@ -64,9 +64,9 @@
 
   width: 100%;
   padding: clamp(2rem, 5vw, 3rem) 0;
-
   border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+
+  
   margin-bottom: clamp(4rem, 10vw, 8rem);
 }
 
@@ -135,9 +135,7 @@
   border-top: 1px solid var(--border);
 }
 
-.ab-job:last-child {
-  border-bottom: 1px solid var(--border);
-}
+
 
 .ab-job__period {
   font-size: 0.85rem;
