@@ -5,16 +5,24 @@
   --text: #111111;
   --text-2: #6B6B6B;
   --text-3: #9A9A9A;
-  --border: rgba(0, 0, 0, 0.09);
-  --border-strong: rgba(0, 0, 0, 0.18);
+
+  --border: rgba(17, 17, 17, 0.115);
+  --border-strong: rgba(17, 17, 17, 0.20);
+
   --accent: #000000;
   --surface: #F5F5F5;
+
+  /* Journal grid rhythm */
+  --journal-step: 24px;
+  --journal-dot: rgba(17, 17, 17, 0.105);
 
   /* Apple-style system stack for UI/body */
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
     "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;
-  /* Display serif — Instrument Serif (as used in the reference) */
+
+  /* Display serif — Instrument Serif */
   --font-serif: "Instrument Serif", "Fraunces", "New York", Georgia, serif;
+
   /* Italic accent */
   --font-italic: "Instrument Serif", Georgia, serif;
 
@@ -43,15 +51,27 @@ html.lenis,
 html.lenis body {
   height: auto;
 }
+
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
+
 .lenis.lenis-stopped {
   overflow: hidden;
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: radial-gradient(
+    circle,
+    var(--journal-dot) 0.8px,
+    transparent 0.9px
+  );
+  background-size: var(--journal-step) var(--journal-step);
+
+  /* Align the dot rows with the portfolio's horizontal dividers */
+  background-position: 0 -6px;
+
   color: var(--text);
   font-family: var(--font-sans);
   font-size: 16px;
@@ -137,12 +157,20 @@ img {
   text-align: right;
 }
 
+/* Keep the same journal rhythm on phones */
+@media (max-width: 640px) {
+  body {
+    background-position: 0 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+
   [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
