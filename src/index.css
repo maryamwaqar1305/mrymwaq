@@ -148,23 +148,3 @@ img {
     transform: none !important;
   }
 }
-
-@media (hover: hover) and (pointer: fine) {
-  body.custom-cursor,
-  body.custom-cursor * {
-    cursor: none;
-  }
-}
-
-/* Scroll reveal */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
-  will-change: opacity, transform;
-}
-
-[data-reveal].is-in {
-  opacity: 1;
-  transform: translateY(0);
-}

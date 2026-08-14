@@ -33,7 +33,7 @@
  */
 .hero__stage {
   position: relative;
-  width: clamp(180px, 17vw, 240px);
+  width: clamp(160px, 14vw, 200px);
   aspect-ratio: 5 / 7;
 }
 
@@ -134,8 +134,23 @@
 }
 
 @media (max-width: 640px) {
-  .hero__hint { position: static; margin-bottom: -0.5rem; }
-  .hero__stage { width: min(52vw, 220px); }
+  .hero {
+    align-items: flex-start;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero__hint,
+  .hero__stage,
+  .hero__foot {
+    display: none;
+  }
+
+  .hero__text {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+  }
 }
 
 .btn {

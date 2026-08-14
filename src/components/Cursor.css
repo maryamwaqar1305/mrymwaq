@@ -37,9 +37,8 @@
    so the cursor reads as a single pixel in the grid. */
 .cur--pixel {
   opacity: 1;
-  background: var(--text);
+  background: rgba(200, 200, 200, 0.35);
 }
-
 .cur-label {
   position: fixed;
   top: 0;
