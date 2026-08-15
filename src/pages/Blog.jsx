@@ -19,7 +19,6 @@ export default function Blog() {
       <section className="blog-list">
         {posts.map((post) => (
           <article className="blog-item" key={post.slug}>
-            <div className="blog-number">{post.number}</div>
 
             <div className="blog-content">
               <div className="blog-meta">
