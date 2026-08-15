@@ -1,0 +1,140 @@
+/* =========================================
+   QUOTES PAGE
+========================================= */
+
+.quotes-page {
+  width: 100%;
+  min-height: calc(100vh - 90px);
+
+  background: #ffffff;
+  color: #111111;
+
+  font-family: var(--font-sans);
+}
+
+
+/* =========================================
+   CENTRAL CONTAINER
+
+   Same width as blog navbar and letters.
+========================================= */
+
+.quotes-container {
+  width: min(760px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+
+/* =========================================
+   QUOTE LIST
+========================================= */
+
+.quotes-list {
+  width: 100%;
+}
+
+
+/* =========================================
+   INDIVIDUAL THOUGHT
+========================================= */
+
+.quote-post {
+  padding: 0 0 38px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.quote-post + .quote-post {
+  padding-top: 38px;
+}
+
+
+/* =========================================
+   THOUGHT TEXT
+========================================= */
+
+.quote-post__text {
+  max-width: 680px;
+
+  margin: 0 0 18px;
+
+  color: #222222;
+
+  font-family: var(--font-sans);
+
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  letter-spacing: -0.005em;
+}
+
+
+/* =========================================
+   DATE
+========================================= */
+
+.quote-post__date {
+  display: block;
+
+  color: #999999;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 0.11em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .quotes-page {
+    min-height: calc(100vh - 72px);
+  }
+
+  .quotes-container {
+    width: calc(100% - 36px);
+
+    padding-top: 65px;
+    padding-bottom: 75px;
+  }
+
+  .quote-post {
+    padding-bottom: 32px;
+  }
+
+  .quote-post + .quote-post {
+    padding-top: 32px;
+  }
+
+  .quote-post__text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .quote-post__date {
+    font-size: 8.5px;
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .quotes-container {
+    width: calc(100% - 30px);
+  }
+
+  .quote-post__text {
+    font-size: 13.5px;
+  }
+}

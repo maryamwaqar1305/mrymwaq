@@ -1,0 +1,366 @@
+/* =========================================
+   BLOG PAGE
+========================================= */
+
+.blog-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 120px 24px 120px;
+
+  background-color: #ffffff;
+  background-image: none;
+
+  background-size: 15px 15px;
+
+  color: #111111;
+
+  font-family: var(--font-sans);
+}
+
+/* =========================================
+   BLOG LIST
+========================================= */
+
+.blog-list {
+  width: min(820px, 100%);
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   BLOG ITEM
+========================================= */
+
+.blog-item {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+
+  width: 100%;
+
+  padding: 48px 0 58px;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.blog-item:first-child {
+  padding-top: 0;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.blog-number {
+  padding-top: 4px;
+
+  color: #999999;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.blog-content {
+  width: 100%;
+  max-width: 700px;
+}
+
+
+/* =========================================
+   META
+========================================= */
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 12px;
+
+  color: #999999;
+
+  font-size: 10px;
+  font-weight: 400;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.blog-title {
+  margin: 0 0 12px;
+
+  color: #111111;
+
+  font-size: 30px;
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.035em;
+}
+
+
+/* =========================================
+   EXCERPT
+========================================= */
+
+.blog-excerpt {
+  max-width: 680px;
+
+  margin: 0 0 20px;
+
+  color: #555555;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.65;
+
+  letter-spacing: -0.005em;
+}
+
+
+/* =========================================
+   READ MORE
+========================================= */
+
+.blog-read-more {
+  display: inline-block;
+
+  color: #111111;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  text-decoration: none;
+
+  transition: opacity 0.2s ease;
+}
+
+.blog-read-more:hover {
+  opacity: 0.5;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+  .blog-page {
+    padding: 100px 24px 100px;
+  }
+
+  .blog-list {
+    width: min(720px, 100%);
+  }
+
+  .blog-item {
+    grid-template-columns: 55px minmax(0, 1fr);
+
+    padding: 42px 0 52px;
+  }
+
+  .blog-title {
+    font-size: 28px;
+  }
+
+  .blog-excerpt {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .blog-page {
+    padding: 80px 20px 80px;
+  }
+
+  .blog-list {
+    width: 100%;
+  }
+
+  .blog-item {
+    display: block;
+
+    padding: 36px 0 45px;
+  }
+
+  .blog-item:first-child {
+    padding-top: 0;
+  }
+
+  .blog-number {
+    margin-bottom: 14px;
+
+    padding-top: 0;
+
+    font-size: 10px;
+  }
+
+  .blog-meta {
+    gap: 12px;
+
+    margin-bottom: 10px;
+
+    font-size: 9px;
+  }
+
+  .blog-title {
+    margin-bottom: 11px;
+
+    font-size: 25px;
+    line-height: 1.2;
+  }
+
+  .blog-excerpt {
+    margin-bottom: 18px;
+
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .blog-read-more {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 420px) {
+  .blog-page {
+    padding: 70px 18px 70px;
+  }
+
+  .blog-title {
+    font-size: 23px;
+  }
+
+  .blog-excerpt {
+    font-size: 13px;
+  }
+}
+/* =========================================
+   BLOG POSTS — LEFT ALIGN
+========================================= */
+
+.blog-list,
+.blog-posts,
+.blog-index {
+  width: min(880px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* Each post */
+.blog-card,
+.blog-list-item,
+.blog-index-item {
+  width: 100%;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Remove the extra left column created by the post number */
+.blog-card > *,
+.blog-list-item > *,
+.blog-index-item > * {
+  text-align: left;
+}
+
+/* Post number + content should start together */
+.blog-card,
+.blog-list-item,
+.blog-index-item {
+  display: block;
+}
+
+/* Metadata */
+.blog-card .meta,
+.blog-list-item .meta,
+.blog-index-item .meta,
+.blog-post-meta {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+/* Title */
+.blog-card h2,
+.blog-list-item h2,
+.blog-index-item h2 {
+  text-align: left;
+  margin-left: 0;
+}
+
+/* Description */
+.blog-card p,
+.blog-list-item p,
+.blog-index-item p {
+  text-align: left;
+  margin-left: 0;
+}
+
+/* Read more */
+.blog-card a,
+.blog-list-item a,
+.blog-index-item a {
+  text-align: left;
+}
+
+/* =========================================
+   REMOVE NUMBER COLUMN OFFSET
+========================================= */
+
+.blog-card .index,
+.blog-list-item .index,
+.blog-index-item .index {
+  position: static;
+  margin: 0 0 12px 0;
+  display: block;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .blog-list,
+  .blog-posts,
+  .blog-index {
+    width: calc(100% - 36px);
+    margin: 0 auto;
+  }
+
+  .blog-card,
+  .blog-list-item,
+  .blog-index-item {
+    width: 100%;
+  }
+
+  .blog-card h2,
+  .blog-list-item h2,
+  .blog-index-item h2 {
+    text-align: left;
+  }
+}

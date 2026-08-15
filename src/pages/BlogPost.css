@@ -1,0 +1,197 @@
+/* =========================================
+   STANDALONE BLOG POST
+========================================= */
+
+.blog-post-page {
+  width: 100%;
+  min-height: calc(100vh - 90px);
+
+  background: #ffffff;
+  color: #111111;
+
+  font-family: var(--font-sans);
+}
+
+
+/* =========================================
+   CENTRAL ARTICLE
+
+   EXACT SAME WIDTH AS BLOG NAVBAR
+========================================= */
+
+.blog-post-container {
+  width: min(760px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  padding-top: 105px;
+  padding-bottom: 110px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.blog-post-header {
+  margin-bottom: 48px;
+}
+
+
+.blog-post-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin-bottom: 14px;
+
+  color: #999999;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.11em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.blog-post-header h1 {
+  margin: 0;
+
+  color: #111111;
+
+  font-family: var(--font-sans);
+
+  font-size: clamp(27px, 3vw, 37px);
+
+  font-weight: 600;
+
+  line-height: 1.14;
+
+  letter-spacing: -0.04em;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+.blog-post-body {
+  width: 100%;
+}
+
+
+.blog-post-body p {
+  margin: 0 0 28px;
+
+  color: #333333;
+
+  font-family: var(--font-sans);
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  line-height: 1.85;
+
+  letter-spacing: -0.005em;
+}
+
+
+.blog-post-body p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.blog-post-not-found {
+  margin: 0 0 15px;
+
+  color: #555555;
+
+  font-size: 14px;
+}
+
+
+.blog-post-not-found-link {
+  color: #111111;
+
+  font-size: 12px;
+
+  text-decoration: none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .blog-post-page {
+    min-height: calc(100vh - 72px);
+  }
+
+  .blog-post-container {
+    width: calc(100% - 36px);
+
+    padding-top: 62px;
+
+    padding-bottom: 75px;
+  }
+
+  .blog-post-header {
+    margin-bottom: 38px;
+  }
+
+  .blog-post-meta {
+    gap: 11px;
+
+    margin-bottom: 12px;
+
+    font-size: 8px;
+  }
+
+  .blog-post-header h1 {
+    font-size: 25px;
+
+    line-height: 1.16;
+  }
+
+  .blog-post-body p {
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 24px;
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .blog-post-container {
+    width: calc(100% - 30px);
+  }
+
+  .blog-post-header h1 {
+    font-size: 23px;
+  }
+
+  .blog-post-body p {
+    font-size: 13.5px;
+
+    line-height: 1.78;
+  }
+}
