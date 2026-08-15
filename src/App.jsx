@@ -1,37 +1,110 @@
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+
 import useLenis from "./hooks/useLenis";
 import Loader from "./components/Loader";
 import Cursor from "./components/Cursor";
 import ScrollToTop from "./components/ScrollToTop";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import BlogNav from "./components/BlogNav";
+
 import Home from "./pages/Home";
 import CaseStudy from "./pages/CaseStudy";
 import AboutPage from "./pages/About";
 import GalleryPage from "./pages/GalleryPage";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import Quotes from "./pages/Quotes";
 
 export default function App() {
   const [ready, setReady] = useState(false);
+  const location = useLocation();
+
   useLenis();
+
+  /*
+   * IMPORTANT:
+   *
+   * /blog
+   *     = part of the normal portfolio
+   *
+   * /blog/quotes
+   * /blog/:slug
+   *     = standalone blog website
+   */
+
+  const isStandaloneBlog =
+    location.pathname === "/blog/quotes" ||
+    (
+      location.pathname.startsWith("/blog/") &&
+      location.pathname !== "/blog"
+    );
 
   return (
     <>
       <ScrollToTop />
-      <Loader onDone={() => setReady(true)} />
-      <Cursor />
-      <Nav />
+
+      {/* NORMAL PORTFOLIO NAVBAR */}
+      {!isStandaloneBlog && (
+        <>
+          <Loader onDone={() => setReady(true)} />
+          <Cursor />
+          <Nav />
+        </>
+      )}
+
+      {/* STANDALONE BLOG NAVBAR */}
+      {isStandaloneBlog && <BlogNav />}
+
       <Routes>
+
+        {/* =========================
+            PORTFOLIO
+        ========================= */}
+
         <Route path="/" element={<Home ready={ready} />} />
+
         <Route path="/work" element={<Home ready={ready} />} />
+
         <Route path="/contact" element={<Home ready={ready} />} />
+
         <Route path="/designs" element={<Home ready={ready} />} />
+
         <Route path="/work/:slug" element={<CaseStudy />} />
+
         <Route path="/about" element={<AboutPage />} />
+
         <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="*" element={<Home ready={ready} />} />
+
+
+        {/* =========================
+            BLOG
+        ========================= */}
+
+        {/* This remains PART OF THE PORTFOLIO */}
+        <Route path="/blog" element={<Blog />} />
+
+        {/* Standalone blog */}
+        <Route path="/blog/quotes" element={<Quotes />} />
+
+        <Route path="/blog/:slug" element={<BlogPost />} />
+
+
+        {/* =========================
+            FALLBACK
+        ========================= */}
+
+        <Route
+          path="*"
+          element={<Home ready={ready} />}
+        />
+
       </Routes>
-      <Footer />
+
+      {/* Portfolio footer only.
+          Standalone blog has its own layout. */}
+      {!isStandaloneBlog && <Footer />}
     </>
   );
 }

@@ -21,6 +21,7 @@ export const profile = {
 export const nav = [
   { label: "Work", href: "/#work" },
   { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/#contact" },
 ];
  
@@ -348,3 +349,30 @@ facts: [
   { label: "Tools", value: "React, Node.js, GitHub" },
 ],
 };
+export const posts = [
+  {
+    slug: "all-roads-lead-back-to-myself",
+    id: "01",
+    date: "August 2026",
+    category: "Notes",
+    title: "All roads lead back to myself.",
+    excerpt:
+      "There is a strange thing I have been noticing about life lately. Every time I think I am moving away from myself, I somehow end up right back here, sitting with my own thoughts again.",
+    content: [
+      `There is a strange thing I have been noticing about life lately. Every time I think I am moving away from myself, I somehow end up right back here, sitting with my own thoughts again, trying to understand what they are trying to tell me. I used to think growth meant distance. Distance from old habits, old fears, old versions of me that felt too small for the life I wanted. I kept believing that if I kept moving, kept chasing something bigger, I would eventually arrive at a place where everything inside me felt settled. A place where my mind felt clear, where my heart felt lighter, where living felt less like carrying invisible weight and more like breathing.`,
+
+      `Life had other plans.`,
+
+      `There have been seasons where everything around me felt louder than my own thoughts. Work piling up, expectations growing taller, people needing things from me, my own mind asking questions I did not have answers for. It is strange how chaos enters life without knocking. One week everything feels manageable and then suddenly even the smallest task feels heavier than it should. Replying to emails feels exhausting. Getting out of bed feels like negotiating with myself. Existing feels crowded. I think that is the hardest part about chaos. It fills every corner so quietly that by the time I notice it, it has already made itself at home.`,
+
+      `For a long time, I treated chaos like something to defeat. Like if I organized my days better or worked harder or stayed busier, I could outrun it. I kept trying to fix the outside, thinking it would repair the inside. It never worked that way. The outside kept changing its shape. Life kept shifting. People changed, plans broke, feelings moved around like furniture in a dark room. I kept realizing the world would always remain unpredictable, and the only place that could hold any real steadiness was inside me.`,
+
+      `That thought scared me at first because it meant I had nowhere else to escape. It meant I had to meet myself fully, with all the unfinished thoughts and unresolved feelings I kept placing in the background. There is something deeply uncomfortable about sitting with yourself when your mind feels crowded. Silence starts feeling louder than noise. Old memories return like unfinished conversations. Things I thought I had moved past begin sitting across from me again, asking to be felt properly this time.`,
+
+       ],
+  },
+];
+
+export function getPost(slug) {
+  return posts.find((post) => post.slug === slug);
+}

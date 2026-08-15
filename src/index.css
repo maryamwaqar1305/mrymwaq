@@ -12,10 +12,6 @@
   --accent: #000000;
   --surface: #F5F5F5;
 
-  /* Journal grid rhythm */
-  --journal-step: 24px;
-  --journal-dot: rgba(17, 17, 17, 0.105);
-
   /* Apple-style system stack for UI/body */
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
     "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;
@@ -61,23 +57,15 @@ html.lenis body {
 }
 
 body {
-  background-color: var(--bg);
-  background-image: radial-gradient(
-    circle,
-    var(--journal-dot) 0.8px,
-    transparent 0.9px
-  );
-  background-size: var(--journal-step) var(--journal-step);
-
-  /* Align the dot rows with the portfolio's horizontal dividers */
-  background-position: 0 -6px;
-
+  background: var(--bg);
   color: var(--text);
+
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.6;
   font-weight: 400;
   letter-spacing: -0.011em;
+
   overflow-x: hidden;
 }
 
@@ -155,13 +143,6 @@ img {
   line-height: 1.05;
   margin-left: auto;
   text-align: right;
-}
-
-/* Keep the same journal rhythm on phones */
-@media (max-width: 640px) {
-  body {
-    background-position: 0 0;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
