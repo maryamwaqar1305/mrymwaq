@@ -5,7 +5,7 @@ const quotes = [
     id: "01",
     date: "14 AUGUST 2026",
     text:
-      "Sometimes finding yourself means returning to the places within you that you thought you had already outgrown.",
+      "As long as I have myself, I will be fine. I have lost people, changed cities, outgrown dreams, and watched entire chapters of my life come to an end. Yet somehow, I have always found my way back to myself. That realization is strangely comforting. It means no matter what life takes from me, it can never take the person who keeps rebuilding it.",
   },
 ];
 

@@ -20,6 +20,20 @@ const posts = {
       `That thought scared me at first because it meant I had nowhere else to escape. It meant I had to meet myself fully, with all the unfinished thoughts and unresolved feelings I kept placing in the background. There is something deeply uncomfortable about sitting with yourself when your mind feels crowded. Silence starts feeling louder than noise. Old memories return like unfinished conversations. Things I thought I had moved past begin sitting across from me again, asking to be felt properly this time.`,
     ],
   },
+
+  "I want to delete myself from the internet completely": {
+    title: "I want to delete myself from the internet completely",
+    date: "17 AUGUST 2026",
+    category: "LETTERS",
+
+    content: [
+      `There are days where I genuinely feel exhausted by how aware I have become of my own existence. Every part of life feels observed now, even when nobody is physically watching. I can be sitting in a café with coffee getting cold beside me, sunlight falling perfectly across the table, music playing somewhere in the background, and instead of fully being there, part of my brain immediately turns the moment into something visual. Something postable. Something that could become a story, a photo dump, a tweet, a paragraph, a memory designed for an audience before it even becomes a memory for myself. That realization scares me more than I admit because I don’t think humans were meant to constantly witness themselves from the outside like this. I think we were meant to disappear inside moments fully, without interruption, without documentation, without feeling this constant pressure to archive ourselves so we can later prove that we lived.`,
+
+      `What makes it worse is that the internet convinced us this behavior is normal. Entire generations now experience life while mentally standing outside of it at the same time. Every dinner table has somebody checking how they look in the front camera. Every concert has thousands of people recording songs they will barely rewatch later. Every beautiful interaction immediately becomes content material in our heads. Even grief gets formatted now. Even loneliness becomes aesthetic. Sometimes I scroll through social media and feel like everybody is performing emotional intimacy instead of actually living it. Everybody knows how to sound self-aware now. Everybody knows how to phrase their sadness beautifully. Everybody knows how to package vulnerability into something consumable. Somewhere along the way, being human started feeling strangely theatrical. And also people digging up ‘relatable quotes’ to justify their nasty behaviour, like be serious for once! Stop hiding behind Pinterest philosophy and take some god damn accountability.`,
+
+      `I think that’s why privacy feels so emotionally important to me now. Privacy used to mean hiding things out of shame or fear. Now it feels sacred. There is something deeply comforting about experiences that exist nowhere except inside your own memory. Some moments become more beautiful when they remain untouched by other people’s opinions. A conversation during a midnight walk. Somebody laughing in the passenger seat while rain hits the windows. Crying during a train ride while nobody notices. Hearing a song at the exact right moment in your life. These things lose something when they immediately become public. The internet keeps teaching us that experiences gain value once they are seen, but honestly, some things feel more alive when nobody else knows they happened.`,
+    ],
+  },
 };
 
 export default function BlogPost() {
@@ -75,7 +89,6 @@ export default function BlogPost() {
           <h1>{post.title}</h1>
 
         </header>
-
 
         <div className="blog-post-body">
 
