@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import useLenis from "./hooks/useLenis";
-import Loader from "./components/Loader";
 import Cursor from "./components/Cursor";
 import ScrollToTop from "./components/ScrollToTop";
 import Nav from "./components/Nav";
@@ -16,16 +15,15 @@ import GalleryPage from "./pages/GalleryPage";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Quotes from "./pages/Quotes";
+import Letters from "./pages/Letters";
 
 export default function App() {
-  const [ready, setReady] = useState(false);
+  const [ready] = useState(true);
   const location = useLocation();
 
   useLenis();
 
   /*
-   * IMPORTANT:
-   *
    * /blog
    *     = part of the normal portfolio
    *
@@ -48,7 +46,6 @@ export default function App() {
       {/* NORMAL PORTFOLIO NAVBAR */}
       {!isStandaloneBlog && (
         <>
-          <Loader onDone={() => setReady(true)} />
           <Cursor />
           <Nav />
         </>
@@ -77,16 +74,19 @@ export default function App() {
 
         <Route path="/gallery" element={<GalleryPage />} />
 
+        
+
 
         {/* =========================
             BLOG
         ========================= */}
 
-        {/* This remains PART OF THE PORTFOLIO */}
+        {/* Blog index — part of portfolio */}
         <Route path="/blog" element={<Blog />} />
 
-        {/* Standalone blog */}
         <Route path="/blog/quotes" element={<Quotes />} />
+
+        <Route path="/blog/letters" element={<Letters />} />
 
         <Route path="/blog/:slug" element={<BlogPost />} />
 
@@ -102,8 +102,7 @@ export default function App() {
 
       </Routes>
 
-      {/* Portfolio footer only.
-          Standalone blog has its own layout. */}
+      {/* Portfolio footer only */}
       {!isStandaloneBlog && <Footer />}
     </>
   );
