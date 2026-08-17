@@ -21,7 +21,7 @@ const posts = {
     ],
   },
 
-  "I want to delete myself from the internet completely": {
+  "i-want-to-delete-myself-from-the-internet-completely": {
     title: "I want to delete myself from the internet completely",
     date: "17 AUGUST 2026",
     category: "LETTERS",
@@ -54,9 +54,7 @@ export default function BlogPost() {
   if (!post) {
     return (
       <main className="blog-post-page">
-
         <article className="blog-post-container">
-
           <p className="blog-post-not-found">
             This letter does not exist.
           </p>
@@ -67,41 +65,33 @@ export default function BlogPost() {
           >
             Letters ↗
           </Link>
-
         </article>
-
       </main>
     );
   }
 
   return (
     <main className="blog-post-page">
-
       <article className="blog-post-container">
 
         <header className="blog-post-header">
-
           <div className="blog-post-meta">
             <span>{post.date}</span>
             <span>{post.category}</span>
           </div>
 
           <h1>{post.title}</h1>
-
         </header>
 
         <div className="blog-post-body">
-
           {post.content.map((paragraph, index) => (
             <p key={index}>
               {paragraph}
             </p>
           ))}
-
         </div>
 
       </article>
-
     </main>
   );
 }
