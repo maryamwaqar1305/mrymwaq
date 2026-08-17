@@ -128,7 +128,7 @@
   color: #111111;
 
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 550;
 
   text-decoration: none;
 
@@ -136,7 +136,8 @@
 }
 
 .letter-link:hover {
-  opacity: 0.5;
+  opacity: 0.7;
+  text-decoration: underline;
 }
 
 
