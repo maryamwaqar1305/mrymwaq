@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./Blog.css";
 
 const posts = [
@@ -19,7 +18,6 @@ export default function Blog() {
       <section className="blog-list">
         {posts.map((post) => (
           <article className="blog-item" key={post.slug}>
-
             <div className="blog-content">
               <div className="blog-meta">
                 <span>{post.date}</span>
@@ -30,12 +28,14 @@ export default function Blog() {
 
               <p className="blog-excerpt">{post.excerpt}</p>
 
-              <Link
-                to={`/blog/${post.slug}`}
+              <a
+                href={`/blog/${post.slug}`}
                 className="blog-read-more"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Read more ↗
-              </Link>
+              </a>
             </div>
           </article>
         ))}

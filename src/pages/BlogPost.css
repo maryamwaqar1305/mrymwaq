@@ -15,8 +15,6 @@
 
 /* =========================================
    CENTRAL ARTICLE
-
-   EXACT SAME WIDTH AS BLOG NAVBAR
 ========================================= */
 
 .blog-post-container {
@@ -49,7 +47,7 @@
 
   color: #999999;
 
-  font-size: 9px;
+  font-size: 10px;
 
   font-weight: 500;
 
@@ -70,7 +68,7 @@
 
   font-family: var(--font-sans);
 
-  font-size: clamp(27px, 3vw, 37px);
+  font-size: clamp(29px, 3vw, 39px);
 
   font-weight: 600;
 
@@ -96,11 +94,11 @@
 
   font-family: var(--font-sans);
 
-  font-size: 15px;
+  font-size: 17px;
 
   font-weight: 400;
 
-  line-height: 1.85;
+  line-height: 1.8;
 
   letter-spacing: -0.005em;
 }
@@ -120,18 +118,17 @@
 
   color: #555555;
 
-  font-size: 14px;
+  font-size: 15px;
 }
 
 
 .blog-post-not-found-link {
   color: #111111;
 
-  font-size: 12px;
+  font-size: 13px;
 
   text-decoration: none;
 }
-
 
 /* =========================================
    MOBILE
@@ -147,7 +144,6 @@
     width: calc(100% - 36px);
 
     padding-top: 62px;
-
     padding-bottom: 75px;
   }
 
@@ -157,27 +153,45 @@
 
   .blog-post-meta {
     gap: 11px;
+    margin-bottom: 13px;
 
-    margin-bottom: 12px;
+    color: #999999;
 
-    font-size: 8px;
+    font-family: var(--font-sans);
+    font-size: 9px;
+    font-weight: 400;
+
+    letter-spacing: 0.1em;
   }
 
   .blog-post-header h1 {
-    font-size: 25px;
+    font-family: var(--font-sans);
 
-    line-height: 1.16;
+    font-size: 28px;
+    font-weight: 600;
+
+    line-height: 1.18;
+    letter-spacing: -0.035em;
   }
 
   .blog-post-body p {
-    font-size: 14px;
+    margin-bottom: 25px;
 
-    line-height: 1.8;
+    color: #333333;
 
-    margin-bottom: 24px;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    font-weight: 400;
+
+    line-height: 1.75;
+    letter-spacing: -0.005em;
   }
 }
 
+
+/* =========================================
+   SMALL PHONES
+========================================= */
 
 @media (max-width: 420px) {
 
@@ -186,12 +200,12 @@
   }
 
   .blog-post-header h1 {
-    font-size: 23px;
+    font-size: 26px;
+    line-height: 1.18;
   }
 
   .blog-post-body p {
-    font-size: 13.5px;
-
+    font-size: 16px;
     line-height: 1.78;
   }
 }
