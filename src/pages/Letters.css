@@ -81,7 +81,7 @@
 ========================================= */
 
 .letter-title {
-  margin: 0 0 14px;
+  margin: 0 0 3px;
 
   color: #111111;
 
@@ -180,7 +180,8 @@
 
     line-height: 1.2;
 
-    margin-bottom: 14px;
+    margin-bottom: 7px;
+    margin: 0 0 12px;
   }
 
   /* Larger + more readable like the About page */

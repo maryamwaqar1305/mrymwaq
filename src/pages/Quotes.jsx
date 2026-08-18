@@ -13,6 +13,12 @@ const quotes = [
     text:
       "The urge to disappear from everyone and abandon everything. To leave without a goodbye. To board the first train to a place I’ve never heard of and walk its streets as a complete stranger. To sit in small cafés where nobody knows my name, rent a tiny apartment with a window overlooking a busy road, and spend my evenings watching people pass by. To exist without a past, without expectations, without anyone asking where I’ve been. Just me and the strange comfort of starting over somewhere no memory can find me.",
   },
+  {
+    id: "03",
+    date: "19 AUGUST 2026",
+    text:
+      "My soul is desperately calling for a new environment.",
+  },
 ];
 
 export default function Quotes() {
