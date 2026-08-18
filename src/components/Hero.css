@@ -169,3 +169,71 @@
 .btn--solid:hover { transform: translateY(-2px); background: #2a2a2a; gap: 0.75rem; }
 .btn--ghost { border: 1px solid var(--border-strong); color: var(--text); }
 .btn--ghost:hover { transform: translateY(-2px); border-color: var(--text); }
+
+/* =========================================
+   HOME — MOBILE TYPOGRAPHY
+   Desktop remains completely unchanged
+========================================= */
+
+/* =========================================
+   HOME — MOBILE TYPOGRAPHY
+========================================= */
+
+@media (max-width: 700px) {
+
+  .hero {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero__title {
+    font-size: 50px;
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .hero__sub {
+    font-size: 20px;
+    line-height: 1.55;
+    max-width: 29ch;
+  }
+
+  .hero__text {
+    gap: 1.1rem;
+  }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 420px) {
+
+  .hero__title {
+    font-size: 47px;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+  }
+
+  .hero__sub {
+    font-size: 19px;
+    line-height: 1.55;
+    max-width: 28ch;
+  }
+
+  .hero__text {
+    gap: 1.1rem;
+  }
+}
+
+
+/* =========================================
+   MOBILE NAV — NAME
+========================================= */
+
+@media (max-width: 700px) {
+  .nav__logo {
+    font-size: 20px;
+  }
+}
