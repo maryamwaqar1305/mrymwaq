@@ -10,7 +10,7 @@ export const profile = {
   firstName: "Maryam",
   role: "Fullstack Developer & Designer",
   heroSub:
-    "I'm a developer and designer who builds and shapes digital experiences — writing the code and crafting the design behind them.",
+    "I'm a developer and designer who builds and shapes digital experiences, writing the code and crafting the design behind them :3",
   email: "maryam.waqar198@gmail.com",
   github: "https://github.com/maryamwaqar1305",
   linkedin: "https://www.linkedin.com/in/maryam-waqar-508a6024a/",
