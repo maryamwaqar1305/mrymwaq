@@ -94,35 +94,39 @@
 
 
 /* Hide category / "LETTERS" */
+
 .blog-meta span:nth-child(2) {
   display: none;
 }
 
 
 /* =========================================
-   TITLE
+   BLOG TITLE
+   DISPLAY FONT LIKE "LUMIÈRE"
 ========================================= */
 
 .blog-title {
   width: 100%;
 
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   padding: 0;
 
   color: #111111;
 
-  font-size: 27px;
-  font-weight: 600;
+  font-family: "Instrument Serif", serif;
 
-  line-height: 1.25;
-  letter-spacing: -0.025em;
+  font-size: 38px;
+  font-weight: 400;
+
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 
   text-align: left;
 }
 
 
 /* =========================================
-   EXCERPT
+   BLOG EXCERPT
 ========================================= */
 
 .blog-excerpt {
@@ -133,6 +137,8 @@
   padding: 0;
 
   color: #555555;
+
+  font-family: var(--font-sans);
 
   font-size: 15px;
   font-weight: 400;
@@ -155,6 +161,8 @@
   padding: 0;
 
   color: #111111;
+
+  font-family: var(--font-sans);
 
   font-size: 13px;
   font-weight: 500;
@@ -201,11 +209,18 @@
   }
 
   .blog-title {
-    font-size: 25px;
+    font-family: "Instrument Serif", serif;
+
+    font-size: 34px;
+    font-weight: 400;
+
+    line-height: 1.05;
+    letter-spacing: -0.02em;
   }
 
   .blog-excerpt {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.6;
   }
 }
 
@@ -220,7 +235,9 @@
     width: 100%;
     min-height: 100vh;
 
-    padding: 82px 18px 70px;
+    padding: 92px 17px 70px;
+
+    box-sizing: border-box;
   }
 
   .blog-list {
@@ -240,11 +257,12 @@
     width: 100%;
 
     margin: 0;
-    padding: 0 0 42px;
+
+    padding: 0 0 46px;
   }
 
   .blog-item + .blog-item {
-    padding-top: 40px;
+    padding-top: 42px;
   }
 
 
@@ -260,6 +278,7 @@
     padding: 0;
   }
 
+
   /* -----------------------------------------
      DATE
   ----------------------------------------- */
@@ -269,35 +288,42 @@
 
     width: 100%;
 
-    margin: 0 0 10px;
+    margin: 0 0 12px;
     padding: 0;
 
-    font-size: 9px;
+    font-family: var(--font-sans);
+
+    font-size: 10px;
     line-height: 1.4;
-    letter-spacing: 0.08em;
+
+    letter-spacing: 0.09em;
   }
 
-  /* Remove "LETTERS" */
   .blog-meta span:nth-child(2) {
     display: none;
   }
 
 
   /* -----------------------------------------
-     TITLE
+     BLOG TITLE
+     SAME DISPLAY STYLE AS PORTFOLIO TITLES
   ----------------------------------------- */
 
   .blog-title {
     width: 100%;
 
-    margin: 0 0 12px;
+    margin: 0 0 15px;
     padding: 0;
 
-    font-size: 20px;
-    font-weight: 600;
+    font-family: "Instrument Serif", serif;
 
-    line-height: 1.25;
-    letter-spacing: -0.025em;
+    font-size: 34px;
+    font-weight: 400;
+
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+
+    color: #111111;
 
     text-align: left;
   }
@@ -311,12 +337,20 @@
     width: 100%;
     max-width: none;
 
-    margin: 0 0 20px;
+    margin: 0 0 24px;
     padding: 0;
 
+    font-family: var(--font-sans);
+
     font-size: 17px;
+    font-weight: 400;
+
     line-height: 1.55;
+
+    letter-spacing: -0.005em;
+
     color: #555f69;
+
     text-align: left;
   }
 
@@ -329,8 +363,14 @@
     margin: 0;
     padding: 0;
 
-    font-size: 13px;
+    font-family: var(--font-sans);
+
+    font-size: 14px;
+    font-weight: 500;
+
     line-height: 1.4;
+
+    color: #111111;
   }
 }
 
@@ -342,22 +382,46 @@
 @media (max-width: 420px) {
 
   .blog-page {
-    padding: 82px 18px 65px;
+    padding: 92px 17px 65px;
   }
+
+
+  /* Blog title */
 
   .blog-title {
-    font-size: 21px;
+    font-family: "Instrument Serif", serif;
+
+    font-size: 32px;
+    font-weight: 400;
+
+    line-height: 1.05;
+    letter-spacing: -0.02em;
   }
 
+
+  /* Blog excerpt */
+
   .blog-excerpt {
+    font-family: var(--font-sans);
+
     font-size: 17px;
-    line-height: 1.50;
+    line-height: 1.5;
+
     color: #555f69;
   }
+
+
+  /* Read link */
+
+  .blog-read-more {
+    font-size: 14px;
+  }
 }
+
+
 /* =========================================
-   FINAL BLOG ALIGNMENT
-   MATCH NAVBAR LOGO
+   DESKTOP BLOG ALIGNMENT
+   MATCH NAVBAR
 ========================================= */
 
 @media (min-width: 801px) {
@@ -371,10 +435,16 @@
     width: calc(100% - 280px) !important;
     max-width: none !important;
 
-    margin-left: max(228px, calc((100vw - 1235px) / 2)) !important;
+    margin-left: max(
+      228px,
+      calc((100vw - 1235px) / 2)
+    ) !important;
+
     margin-right: 0 !important;
 
     padding: 0 !important;
+
+    transform: translateX(-17px) !important;
   }
 
   .blog-content {
@@ -389,25 +459,39 @@
     width: 100% !important;
   }
 
+
+  /* Desktop title */
+
   .blog-title {
-    font-size: 27px !important;
+    font-family: "Instrument Serif", serif !important;
+
+    font-size: 35px !important;
+    font-weight: 400 !important;
+
+    line-height: 1.05 !important;
+    letter-spacing: -0.02em !important;
   }
 
+
+  /* Desktop excerpt */
+
   .blog-excerpt {
+    font-family: var(--font-sans);
+
     font-size: 15px !important;
   }
 }
 
 
 /* =========================================
-   MOBILE — DO NOT USE DESKTOP OFFSET
+   MOBILE — RESET DESKTOP OFFSET
 ========================================= */
 
 @media (max-width: 800px) {
 
   .blog-page {
-    padding-left: 18px !important;
-    padding-right: 18px !important;
+    padding-left: 17px !important;
+    padding-right: 17px !important;
   }
 
   .blog-list {
@@ -416,80 +500,7 @@
 
     margin-left: 0 !important;
     margin-right: 0 !important;
-  }
-}
-/* =========================================
-   FINAL DESKTOP ALIGNMENT
-   MOVE BLOG LEFT TO NAVBAR ALIGNMENT
-========================================= */
 
-@media (min-width: 801px) {
-
-  .blog-list {
-    transform: translateX(-17px) !important;
-  }
-
-}
-/* =========================
-   MOBILE BLOG TYPOGRAPHY
-   ========================= */
-
-@media (max-width: 768px) {
-
-  .blog-page {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 92px 17px 0;
-    margin: 0;
-  }
-
-  .blog-post {
-    width: 100%;
-    padding: 0 0 44px;
-  }
-
-  .blog-post + .blog-post {
-    border-top: 1px solid #eeeeee;
-    padding-top: 42px;
-  }
-
-  /* DATE */
-  .blog-post-date {
-    display: block;
-    margin: 0 0 12px;
-    font-size: 11px;
-    line-height: 1.4;
-    letter-spacing: 0.11em;
-    color: #999;
-  }
-
-  /* HEADING */
-  .blog-post-title,
-  .blog-post h2 {
-    margin: 0 0 14px;
-    font-size: 26px;
-    line-height: 1.2;
-    letter-spacing: -0.025em;
-    font-weight: 600;
-    color: #111;
-  }
-
-  /* GREY SUBHEADING */
-  .blog-post-excerpt,
-  .blog-post p {
-    margin: 0 0 29px;
-    font-size: 17px;
-    line-height: 1.55;
-    font-weight: 400;
-    color: #555f69;
-  }
-
-  /* READ MORE */
-  .read-more {
-    display: inline-block;
-    font-size: 14px;
-    line-height: 1.4;
-    color: #111;
-    text-decoration: none;
+    transform: none !important;
   }
 }

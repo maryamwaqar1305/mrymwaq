@@ -8,7 +8,7 @@ const posts = [
     slug: "all-roads-lead-back-to-myself",
     title: "All roads lead back to myself.",
     excerpt:
-      "A reflection on returning to yourself when life becomes noisy, learning to sit with uncertainty, and finding steadiness within.",
+      "The art of returning to yourself when the world gets too loud.",
   },
 
   {
