@@ -65,7 +65,7 @@ export default function GalleryPage() {
             data-cursor="View"
           >
             <div className="gp-frame">
-              <img src={item.src} alt={item.caption} loading="lazy" />
+              <img src={item.src} alt={item.caption} loading="lazy" decoding="async" />
             </div>
             <figcaption className="gp-cap">{item.caption}</figcaption>
           </figure>

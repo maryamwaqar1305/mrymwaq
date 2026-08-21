@@ -19,7 +19,7 @@ export default function Gallery() {
         {picks.map((item, i) => (
           <figure className="gt-item" key={i} data-reveal data-delay={i * 90}>
             <div className="gt-frame">
-              <img src={item.src} alt={item.caption} loading="lazy" />
+              <img src={item.src} alt={item.caption} loading="lazy" decoding="async" />
             </div>
             <figcaption className="gt-cap">{item.caption}</figcaption>
           </figure>

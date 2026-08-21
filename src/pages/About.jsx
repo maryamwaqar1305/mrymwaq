@@ -29,7 +29,7 @@ export default function AboutPage() {
             hover cursor, so phones get no imagery otherwise. */}
         <div className="ab-titlerow">
           <h1 className="ab-title display">{profile.name}</h1>
-          <img className="ab-pfp" src="/pfp3.jpg" alt={profile.name} loading="lazy" />
+          <img className="ab-pfp" src="/pfp3.jpg" alt={profile.name} loading="lazy" decoding="async" />
         </div>
         <p className="ab-intro">{about.intro}</p>
 

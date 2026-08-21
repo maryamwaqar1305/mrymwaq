@@ -1,506 +1,108 @@
 /* =========================================
    BLOG PAGE
+   Content geometry mirrors .container exactly,
+   so the list always lines up with the navbar.
 ========================================= */
 
 .blog-page {
   width: 100%;
   min-height: 100vh;
-
-  padding: 110px 0 120px;
-
-  margin: 0;
-
-  background: #ffffff;
-  color: #111111;
-
-  font-family: var(--font-sans);
-
-  box-sizing: border-box;
+  padding-block: clamp(6rem, 12vh, 8.5rem) 7rem;
 }
 
-
-/* =========================================
-   BLOG LIST
-   SAME WIDTH / ALIGNMENT AS NAVBAR
-========================================= */
-
+/* Same box as the navbar's .container:
+   max-width 1240px + same fluid gutters. */
 .blog-list {
-  width: 1200px;
-  max-width: calc(100% - 36px);
-
-  margin: 0 auto;
-  padding: 0;
-
-  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
 }
-
 
 /* =========================================
    BLOG ITEM
 ========================================= */
 
 .blog-item {
-  width: 100%;
-
-  margin: 0;
-  padding: 0 0 55px;
-
-  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
-
-  box-sizing: border-box;
+  padding-bottom: clamp(2.75rem, 5vw, 3.5rem);
+  border-bottom: 1px solid var(--border);
 }
 
 .blog-item + .blog-item {
-  padding-top: 40px;
+  padding-top: clamp(2.25rem, 4vw, 2.75rem);
 }
 
-
 /* =========================================
-   BLOG CONTENT
+   TEXTS
 ========================================= */
 
 .blog-content {
-  width: 100%;
-  max-width: 760px;
-
-  margin: 0;
-  padding: 0;
-
-  box-sizing: border-box;
+  max-width: 62ch;
 }
 
-
-/* =========================================
-   META / DATE
-========================================= */
-
+/* Date — matches the portfolio's .eyebrow style */
 .blog-meta {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 0.9rem;
 
-  margin: 0 0 12px;
-  padding: 0;
-
-  color: #999999;
-
-  font-size: 10px;
-  font-weight: 400;
-
+  color: var(--text-3);
+  font-size: 0.72rem;
+  font-weight: 500;
   line-height: 1.4;
-  letter-spacing: 0.08em;
-
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
 }
-
-
-/* Hide category / "LETTERS" */
-
-.blog-meta span:nth-child(2) {
-  display: none;
-}
-
-
-/* =========================================
-   BLOG TITLE
-   DISPLAY FONT LIKE "LUMIÈRE"
-========================================= */
 
 .blog-title {
-  width: 100%;
+  margin: 0 0 0.85rem;
 
-  margin: 0 0 14px;
-  padding: 0;
-
-  color: #111111;
-
-  font-family: "Instrument Serif", serif;
-
-  font-size: 38px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.4vw, 2.4rem);
   font-weight: 400;
-
   line-height: 1.05;
   letter-spacing: -0.02em;
-
-  text-align: left;
+  color: var(--text);
 }
-
-
-/* =========================================
-   BLOG EXCERPT
-========================================= */
 
 .blog-excerpt {
-  width: 100%;
-  max-width: 760px;
+  margin: 0 0 1.4rem;
 
-  margin: 0 0 22px;
-  padding: 0;
-
-  color: #555555;
-
-  font-family: var(--font-sans);
-
-  font-size: 15px;
-  font-weight: 400;
-
+  color: var(--text-2);
+  font-size: clamp(0.95rem, 1.2vw, 1.02rem);
   line-height: 1.65;
   letter-spacing: -0.005em;
-
-  text-align: left;
 }
 
-
-/* =========================================
-   READ MORE
-========================================= */
-
+/* Read more — underline slides in, like the nav links */
 .blog-read-more {
+  position: relative;
   display: inline-block;
+  padding-bottom: 2px;
 
-  margin: 0;
-  padding: 0;
-
-  color: #111111;
-
-  font-family: var(--font-sans);
-
-  font-size: 13px;
+  color: var(--text);
+  font-size: 0.85rem;
   font-weight: 500;
-
   line-height: 1.4;
-
   text-decoration: none;
-
-  transition: opacity 0.2s ease;
 }
 
-.blog-read-more:hover {
-  opacity: 0.5;
+.blog-read-more::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--text);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s var(--ease);
 }
 
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 800px) {
-
-  .blog-page {
-    padding: 95px 24px 100px;
-  }
-
-  .blog-list {
-    width: 100%;
-    max-width: none;
-
-    margin: 0;
-  }
-
-  .blog-item {
-    padding-bottom: 48px;
-  }
-
-  .blog-item + .blog-item {
-    padding-top: 40px;
-  }
-
-  .blog-content {
-    max-width: 760px;
-  }
-
-  .blog-title {
-    font-family: "Instrument Serif", serif;
-
-    font-size: 34px;
-    font-weight: 400;
-
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-  }
-
-  .blog-excerpt {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
-  .blog-page {
-    width: 100%;
-    min-height: 100vh;
-
-    padding: 92px 17px 70px;
-
-    box-sizing: border-box;
-  }
-
-  .blog-list {
-    width: 100%;
-    max-width: none;
-
-    margin: 0;
-    padding: 0;
-  }
-
-
-  /* -----------------------------------------
-     BLOG ITEM
-  ----------------------------------------- */
-
-  .blog-item {
-    width: 100%;
-
-    margin: 0;
-
-    padding: 0 0 46px;
-  }
-
-  .blog-item + .blog-item {
-    padding-top: 42px;
-  }
-
-
-  /* -----------------------------------------
-     CONTENT
-  ----------------------------------------- */
-
-  .blog-content {
-    width: 100%;
-    max-width: none;
-
-    margin: 0;
-    padding: 0;
-  }
-
-
-  /* -----------------------------------------
-     DATE
-  ----------------------------------------- */
-
-  .blog-meta {
-    display: block;
-
-    width: 100%;
-
-    margin: 0 0 12px;
-    padding: 0;
-
-    font-family: var(--font-sans);
-
-    font-size: 10px;
-    line-height: 1.4;
-
-    letter-spacing: 0.09em;
-  }
-
-  .blog-meta span:nth-child(2) {
-    display: none;
-  }
-
-
-  /* -----------------------------------------
-     BLOG TITLE
-     SAME DISPLAY STYLE AS PORTFOLIO TITLES
-  ----------------------------------------- */
-
-  .blog-title {
-    width: 100%;
-
-    margin: 0 0 15px;
-    padding: 0;
-
-    font-family: "Instrument Serif", serif;
-
-    font-size: 34px;
-    font-weight: 400;
-
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-
-    color: #111111;
-
-    text-align: left;
-  }
-
-
-  /* -----------------------------------------
-     EXCERPT
-  ----------------------------------------- */
-
-  .blog-excerpt {
-    width: 100%;
-    max-width: none;
-
-    margin: 0 0 24px;
-    padding: 0;
-
-    font-family: var(--font-sans);
-
-    font-size: 17px;
-    font-weight: 400;
-
-    line-height: 1.55;
-
-    letter-spacing: -0.005em;
-
-    color: #555f69;
-
-    text-align: left;
-  }
-
-
-  /* -----------------------------------------
-     READ MORE
-  ----------------------------------------- */
-
-  .blog-read-more {
-    margin: 0;
-    padding: 0;
-
-    font-family: var(--font-sans);
-
-    font-size: 14px;
-    font-weight: 500;
-
-    line-height: 1.4;
-
-    color: #111111;
-  }
-}
-
-
-/* =========================================
-   SMALL PHONES
-========================================= */
-
-@media (max-width: 420px) {
-
-  .blog-page {
-    padding: 92px 17px 65px;
-  }
-
-
-  /* Blog title */
-
-  .blog-title {
-    font-family: "Instrument Serif", serif;
-
-    font-size: 32px;
-    font-weight: 400;
-
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-  }
-
-
-  /* Blog excerpt */
-
-  .blog-excerpt {
-    font-family: var(--font-sans);
-
-    font-size: 17px;
-    line-height: 1.5;
-
-    color: #555f69;
-  }
-
-
-  /* Read link */
-
-  .blog-read-more {
-    font-size: 14px;
-  }
-}
-
-
-/* =========================================
-   DESKTOP BLOG ALIGNMENT
-   MATCH NAVBAR
-========================================= */
-
-@media (min-width: 801px) {
-
-  .blog-page {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  .blog-list {
-    width: calc(100% - 280px) !important;
-    max-width: none !important;
-
-    margin-left: max(
-      228px,
-      calc((100vw - 1235px) / 2)
-    ) !important;
-
-    margin-right: 0 !important;
-
-    padding: 0 !important;
-
-    transform: translateX(-17px) !important;
-  }
-
-  .blog-content {
-    width: 100% !important;
-    max-width: 760px !important;
-
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-
-  .blog-item {
-    width: 100% !important;
-  }
-
-
-  /* Desktop title */
-
-  .blog-title {
-    font-family: "Instrument Serif", serif !important;
-
-    font-size: 35px !important;
-    font-weight: 400 !important;
-
-    line-height: 1.05 !important;
-    letter-spacing: -0.02em !important;
-  }
-
-
-  /* Desktop excerpt */
-
-  .blog-excerpt {
-    font-family: var(--font-sans);
-
-    font-size: 15px !important;
-  }
-}
-
-
-/* =========================================
-   MOBILE — RESET DESKTOP OFFSET
-========================================= */
-
-@media (max-width: 800px) {
-
-  .blog-page {
-    padding-left: 17px !important;
-    padding-right: 17px !important;
-  }
-
-  .blog-list {
-    width: 100% !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    transform: none !important;
-  }
+.blog-read-more:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }

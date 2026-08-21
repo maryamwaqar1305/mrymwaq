@@ -26,7 +26,7 @@ export default function Projects() {
               >
                 <div className="pcard__image">
                   {p.cover ? (
-                    <img src={p.cover} alt={p.title} loading="lazy" />
+                    <img src={p.cover} alt={p.title} loading="lazy" decoding="async" />
                   ) : (
                     <span className="pcard__mark">{p.title.charAt(0)}</span>
                   )}

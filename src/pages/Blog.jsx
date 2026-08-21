@@ -12,14 +12,14 @@ const posts = [
   },
 
   {
-  number: "02",
-  date: "17 AUGUST 2026",
-  category: "LETTERS",
-  slug: "i-want-to-delete-myself-from-the-internet-completely",
-  title: "I want to delete myself from the internet completely",
-  excerpt:
-    "Somewhere Along the Way, Living Started Feeling Performative.",
-},
+    number: "02",
+    date: "17 AUGUST 2026",
+    category: "LETTERS",
+    slug: "i-want-to-delete-myself-from-the-internet-completely",
+    title: "I want to delete myself from the internet completely",
+    excerpt:
+      "Somewhere Along the Way, Living Started Feeling Performative.",
+  },
 ];
 
 export default function Blog() {

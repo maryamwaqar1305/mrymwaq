@@ -16,6 +16,13 @@
   overflow: hidden;
   border-radius: 0;
   width: 100%;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.6s var(--ease), border-color 0.6s var(--ease);
+}
+
+.pcard__frame:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 24px 60px -30px rgba(17, 17, 17, 0.28);
 }
 
 .pcard__image {
@@ -72,6 +79,11 @@
   font-size: 1.5rem;
   letter-spacing: -0.02em;
   line-height: 1.1;
+  transition: opacity 0.3s var(--ease);
+}
+
+.pcard:hover .pcard__title {
+  opacity: 0.65;
 }
 
 .pcard__desc {
@@ -90,8 +102,9 @@
   font-size: 0.72rem;
   color: var(--text-2);
   background: var(--surface);
+  border: 1px solid var(--border);
   padding: 0.25rem 0.7rem;
-  border-radius: 4px;
+  border-radius: 100px;
 }
 
 /* Desktop: alternate image sides, text sits under its own image (aligned to it) */

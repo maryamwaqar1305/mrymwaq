@@ -38,6 +38,7 @@ export default function Contact() {
               className="contact__ext"
             >
               GitHub
+              <span className="contact__ext-arrow" aria-hidden="true">↗</span>
             </a>
             <a
               href={profile.linkedin}
@@ -46,6 +47,7 @@ export default function Contact() {
               className="contact__ext"
             >
               LinkedIn
+              <span className="contact__ext-arrow" aria-hidden="true">↗</span>
             </a>
             <a
               href={profile.x}
@@ -54,6 +56,7 @@ export default function Contact() {
               className="contact__ext"
             >
               X
+              <span className="contact__ext-arrow" aria-hidden="true">↗</span>
             </a>
           </div>
         </div>

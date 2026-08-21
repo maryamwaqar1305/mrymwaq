@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import BlogNav from "./components/BlogNav";
+import Backdrop from "./components/Backdrop";
 
 import Home from "./pages/Home";
 import CaseStudy from "./pages/CaseStudy";
@@ -41,6 +42,7 @@ export default function App() {
 
   return (
     <>
+      <Backdrop />
       <ScrollToTop />
 
       {/* NORMAL PORTFOLIO NAVBAR */}
@@ -54,7 +56,9 @@ export default function App() {
       {/* STANDALONE BLOG NAVBAR */}
       {isStandaloneBlog && <BlogNav />}
 
-      <Routes>
+      {/* Keyed by pathname so each page plays its enter animation on arrival */}
+      <div className="page-enter" key={location.pathname}>
+        <Routes>
 
         {/* =========================
             PORTFOLIO
@@ -100,7 +104,8 @@ export default function App() {
           element={<Home ready={ready} />}
         />
 
-      </Routes>
+        </Routes>
+      </div>
 
       {/* Portfolio footer only */}
       {!isStandaloneBlog && <Footer />}

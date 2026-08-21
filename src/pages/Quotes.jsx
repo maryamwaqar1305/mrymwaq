@@ -19,6 +19,12 @@ const quotes = [
     text:
       "My soul is desperately calling for a new environment.",
   },
+  {
+    id: "04",
+    date: "21 AUGUST 2026",
+    text:
+      "The more you love yourself, the easier you’ll detach from things that don’t love you back. You stop asking whether you’re enough for them and start asking whether this is enough for you. That single question changes everything. And you begin to understand that love should feel like a home you can rest in, not a door you’re always trying to earn the right to enter.",
+  },
 ];
 
 export default function Quotes() {

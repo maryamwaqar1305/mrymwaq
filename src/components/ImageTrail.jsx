@@ -13,7 +13,7 @@ import t11 from "../assets/trail/t11.jpg";
 import t12 from "../assets/trail/t12.jpg";
 import t13 from "../assets/trail/t13.jpg";
 import t14 from "../assets/trail/t14.jpg";
-import t15 from "../assets/trail/t15.jpg";
+import t15 from "../assets/trail/t15.webp";
 import t16 from "../assets/trail/t16.jpg";
 import t17 from "../assets/trail/t17.jpg";
 import t18 from "../assets/trail/t18.jpg";
@@ -25,10 +25,10 @@ import t23 from "../assets/trail/t23.jpg";
 import t24 from "../assets/trail/t24.jpg";
 import t25 from "../assets/trail/t25.jpg";
 import t26 from "../assets/trail/t26.jpg";
-import t27 from "../assets/trail/t27.jpg";
+import t27 from "../assets/trail/t27.webp";
 import t28 from "../assets/trail/t28.jpg";
 import t29 from "../assets/trail/t29.jpg";
-import t30 from "../assets/trail/t30.jpeg";
+import t30 from "../assets/trail/t30.webp";
 import "./ImageTrail.css";
 
 const IMAGES = [

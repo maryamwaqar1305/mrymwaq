@@ -1,7 +1,7 @@
-import projGraphic from "../assets/projects/graphic.png";
-import projFinancehub from "../assets/projects/financehub.png";
-import projAtmos from "../assets/projects/atmoss.png";
-import projLumiere from "../assets/projects/lumie.png";
+import projGraphic from "../assets/projects/graphic.webp";
+import projFinancehub from "../assets/projects/financehub.webp";
+import projAtmos from "../assets/projects/atmoss.webp";
+import projLumiere from "../assets/projects/lumie.webp";
 
 
 export const profile = {
