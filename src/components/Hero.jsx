@@ -109,7 +109,7 @@ export default function Hero() {
       </div>
 
       <div className="hero__text">
-        <h1 className="hero__title display">Hey, I&apos;m {profile.firstName}.</h1>
+        <h1 className="hero__title display">Hi, I&apos;m {profile.firstName}.</h1>
         <p className="hero__sub">{profile.heroSub}</p>
       </div>
 
